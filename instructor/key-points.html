@@ -176,7 +176,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="01-basics.html">1. Automated Version Control</a>
+        <a href="01-basics.html">1. 自動的なバージョン管理</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -188,7 +188,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="02-setup.html">2. Setting Up Git</a>
+        <a href="02-setup.html">2. Gitの設定</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -212,7 +212,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-changes.html">4. Tracking Changes</a>
+        <a href="04-changes.html">4. 変更内容の記録</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -224,7 +224,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-history.html">5. Exploring History</a>
+        <a href="05-history.html">5. 履歴の探索</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -236,7 +236,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06-ignore.html">6. Ignoring Things</a>
+        <a href="06-ignore.html">6. ファイルを無視する</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -248,7 +248,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="07-github.html">7. Remotes in GitHub</a>
+        <a href="07-github.html">7. GitHub におけるリモート</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -284,7 +284,7 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="10-open.html">10. Open Science</a>
+        <a href="10-open.html">10. オープン サイエンス</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -397,51 +397,50 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="01-basics"><h2 class="section-heading"><a href="01-basics.html">Automated Version Control</a></h2>
+<section id="01-basics"><h2 class="section-heading"><a href="01-basics.html">自動的なバージョン管理</a></h2>
 <hr class="half-width">
 <ul>
-<li>Version control is like an unlimited ‘undo’.</li>
-<li>Version control also allows many people to work in parallel.</li>
-</ul></section><section id="02-setup"><h2 class="section-heading"><a href="02-setup.html">Setting Up Git</a></h2>
+<li>バージョン管理とは、制限無く「元に戻す」ことができる機能。</li>
+<li>バージョン管理を使えば、複数の人と同時進行で作業をする事ができます。</li>
+</ul></section><section id="02-setup"><h2 class="section-heading"><a href="02-setup.html">Gitの設定</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>git config</code> with the <code>--global</code> option to
-configure a user name, email address, editor, and other preferences once
-per machine.</li>
+<li>
+<code>git config</code> と <code>--global</code>
+オプションを使い、ユーザー名、メールアドレス、エディタ、その他の設定を行う。</li>
 </ul></section><section id="03-create"><h2 class="section-heading"><a href="03-create.html">Creating a Repository</a></h2>
 <hr class="half-width">
 <ul>
 <li>
-<code>git init</code> initializes a repository.</li>
-<li>Git stores all of its repository data in the <code>.git</code>
-directory.</li>
-</ul></section><section id="04-changes"><h2 class="section-heading"><a href="04-changes.html">Tracking Changes</a></h2>
+<code>git init</code> はリポジトリを初期化する。</li>
+<li>Gitはリポジトリデータのすべてを<code>.git</code>ディレクトリに格納する。</li>
+</ul></section><section id="04-changes"><h2 class="section-heading"><a href="04-changes.html">変更内容の記録</a></h2>
 <hr class="half-width">
 <ul>
 <li>
-<code>git status</code> shows the status of a repository.</li>
-<li>Files can be stored in a project’s working directory (which users
-see), the staging area (where the next commit is being built up) and the
-local repository (where commits are permanently recorded).</li>
+<code>git status</code> はリポジトリの状態を表示する。</li>
+<li>ファイルはプロジェクトの作業ディレクトリ、ステージング・エリア（次のコミットに含まれる変更点が蓄積される場所）、そしてローカル・リポジトリ（コミットが永久に記録される場所）に保存される。</li>
 <li>
-<code>git add</code> puts files in the staging area.</li>
+<code>git add</code>
+はファイルをステージング・エリアに移動させる。</li>
 <li>
-<code>git commit</code> saves the staged content as a new commit in
-the local repository.</li>
-<li>Write a commit message that accurately describes your changes.</li>
-</ul></section><section id="05-history"><h2 class="section-heading"><a href="05-history.html">Exploring History</a></h2>
+<code>git commit</code>
+はステージされた内容をローカル・リポジトリに保存する。</li>
+<li>コミットメッセージは、変更点がわかりやすいように書きましょう。</li>
+</ul></section><section id="05-history"><h2 class="section-heading"><a href="05-history.html">履歴の探索</a></h2>
 <hr class="half-width">
 <ul>
 <li>
-<code>git diff</code> displays differences between commits.</li>
+<code>git diff</code> は、コミット間の違いを表示します。</li>
 <li>
-<code>git checkout</code> recovers old versions of files.</li>
-</ul></section><section id="06-ignore"><h2 class="section-heading"><a href="06-ignore.html">Ignoring Things</a></h2>
+<code>git checkout</code>
+は、ファイルの古いバージョンを復元します。</li>
+</ul></section><section id="06-ignore"><h2 class="section-heading"><a href="06-ignore.html">ファイルを無視する</a></h2>
 <hr class="half-width">
 <ul>
-<li>The <code>.gitignore</code> file tells Git what files to
-ignore.</li>
-</ul></section><section id="07-github"><h2 class="section-heading"><a href="07-github.html">Remotes in GitHub</a></h2>
+<li>
+<code>.gitignore</code> で無視するファイルを指定する</li>
+</ul></section><section id="07-github"><h2 class="section-heading"><a href="07-github.html">GitHub におけるリモート</a></h2>
 <hr class="half-width">
 <ul>
 <li>A local Git repository can be connected to one or more remote
@@ -468,11 +467,10 @@ same file.</li>
 <li>The version control system does not allow people to overwrite each
 other’s changes blindly, but highlights conflicts so that they can be
 resolved.</li>
-</ul></section><section id="10-open"><h2 class="section-heading"><a href="10-open.html">Open Science</a></h2>
+</ul></section><section id="10-open"><h2 class="section-heading"><a href="10-open.html">オープン サイエンス</a></h2>
 <hr class="half-width">
 <ul>
-<li>Open scientific work is more useful and more highly cited than
-closed.</li>
+<li>オープンな科学的研究は、クローズドよりも有用であり、引用数が多い。</li>
 </ul></section><section id="11-licensing"><h2 class="section-heading"><a href="11-licensing.html">Licensing</a></h2>
 <hr class="half-width">
 <ul>
