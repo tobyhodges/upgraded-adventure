@@ -1,5 +1,5 @@
 ---
-title: 'Git Cheatsheets for Quick Reference'
+title: Git Cheatsheets for Quick Reference
 ---
 
 ## Git Cheatsheets for Quick Reference
@@ -77,5 +77,3 @@ small.
 Each set of changes creates a new [commit](#commit) of the files;
 the version control system allows users to recover old commits reliably,
 and helps manage conflicting changes made by different users.
-
-

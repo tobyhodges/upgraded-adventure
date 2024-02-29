@@ -1,58 +1,48 @@
 ---
-title: Remotes in GitHub
+title: GitHub におけるリモート
 teaching: 45
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what remote repositories are and why they are useful.
-- Push to or pull from a remote repository.
+- リモートリポジトリとは何なのか、そしてなぜそれが役立つのかを説明します。
+- リモートリポジトリへのプッシュまたはリモートリポジトリからのプル。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How do I share my changes with others on the web?
+- 自分の変更をウェブ上で他の人と共有するにはどうすればよいですか？
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Version control really comes into its own when we begin to collaborate with
-other people.  We already have most of the machinery we need to do this; the
-only thing missing is to copy changes from one repository to another.
+バージョン管理が真価を発揮するのは、他の人々と共同作業を始めるときです。  これを行うために必要な機構のほとんどはすでに揃っています。
+唯一欠けているのは、あるリポジトリから別のリポジトリに変更をコピーすることです。
 
-Systems like Git allow us to move work between any two repositories.  In
-practice, though, it's easiest to use one copy as a central hub, and to keep it
-on the web rather than on someone's laptop.  Most programmers use hosting
-services like [GitHub](https://github.com), [Bitbucket](https://bitbucket.org) or
-[GitLab](https://gitlab.com/) to hold those main copies; we'll explore the pros
-and cons of this in a [later episode](13-hosting.md).
+Git のようなシステムを使用すると、任意の 2 つのリポジトリ間で作業結果を動かすことができます。  ただし、実際には、1 つのコピーを中央ハブとして使用し、それを誰かのラップトップではなくウェブ上に
+保管するのが最も簡単です。  ほとんどのプログラマーは、[GitHub](https://github.com) や [Bitbucket](https://bitbucket.org)、あるいは [GitLab](https://gitlab.com/) のようなホスティングサービス
+に、これらのメインコピーを保持しています。この長所と短所については、[後のエピソード](13-hosting.md) で探ります。
 
-Let's start by sharing the changes we've made to our current project with the
-world. To this end we are going to create a *remote* repository that will be linked to our *local* repository.
+まずは、現在のプロジェクトに加えた変更を世界と共有することから始めましょう。 この目的のために、_ローカル_ リポジトリにリンクされる _リモート_ リポジトリを作成します。
 
-## 1\. Create a remote repository
+## 1. リモートリポジトリを作成する。
 
-Log in to [GitHub](https://github.com), then click on the icon in the top right corner to
-create a new repository called `planets`:
+[GitHub](https://github.com) にログインし、右上隅のアイコンをクリックして `planets` という名前の新しいリポジトリを作成してみましょう：
 
 ![](fig/github-create-repo-01.png){alt='Creating a Repository on GitHub (Step 1)'}
 
-Name your repository "planets" and then click "Create Repository".
+リポジトリに「planets」という名前を付けて、「Create Repository」をクリックします。
 
-Note: Since this repository will be connected to a local repository, it needs to be empty. Leave
-"Initialize this repository with a README" unchecked, and keep "None" as options for both "Add
-.gitignore" and "Add a license." See the "GitHub License and README files" exercise below for a full
-explanation of why the repository needs to be empty.
+注: このリポジトリはローカルのリポジトリに接続されるため、空にしておく必要があります。 「Initialize this repository with a README」のチェックを外したままにし、「Add .gitignore」と「Add a license.」の両方のオプションを「None」のままにします。 リポジトリを空にしておく必要がある理由の完全な説明については、以下の「GitHub ライセンスと README ファイル」の演習を参照してください。
 
 ![](fig/github-create-repo-02.png){alt='Creating a Repository on GitHub (Step 2)'}
 
-As soon as the repository is created, GitHub displays a page with a URL and some
-information on how to configure your local repository:
+リポジトリが作成されるとすぐに、GitHub には ある URL と、ローカルのリポジトリの構成方法に関する情報が記載されたページが表示されます。
 
 ![](fig/github-create-repo-03.png){alt='Creating a Repository on GitHub (Step 3)'}
 
-This effectively does the following on GitHub's servers:
+これにより、GitHub のサーバー上で次のことが効果的に行われます。
 
 ```bash
 $ mkdir planets
@@ -60,9 +50,8 @@ $ cd planets
 $ git init
 ```
 
-If you remember back to the earlier [episode](04-changes.md) where we added and
-committed our earlier work on `mars.txt`, we had a diagram of the local repository
-which looked like this:
+もしあなたが以前の [エピソード](04-changes.md) を覚えていれば、私達は `mars.txt` に以前の作業を追加してコミットしました。
+ローカルリポジトリのダイアグラムは次のようになります：
 
 ![](fig/git-staging-area.svg){alt='The Local Repository with Git Staging Area'}
 
@@ -73,7 +62,7 @@ Now that we have two repositories, we need a diagram like this:
 Note that our local repository still contains our earlier work on `mars.txt`, but the
 remote repository on GitHub appears empty as it doesn't contain any files yet.
 
-## 2\. Connect local to remote repository
+## 2. Connect local to remote repository
 
 Now we connect the two repositories.  We do this by making the
 GitHub repository a [remote](../learners/reference.md#remote) for the local repository.
@@ -90,8 +79,7 @@ Click on the 'SSH' link to change the [protocol](../learners/reference.md#protoc
 
 We use SSH here because, while it requires some additional configuration, it is a
 security protocol widely used by many applications.  The steps below describe SSH at a
-minimum level for GitHub. 
-
+minimum level for GitHub.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -125,7 +113,7 @@ origin   git@github.com:vlad/planets.git (push)
 We'll discuss remotes in more detail in the next episode, while
 talking about how they might be used for collaboration.
 
-## 3\. SSH Background and Setup
+## 3. SSH Background and Setup
 
 Before Dracula can connect to a remote repository, he needs to set up a way for his computer to authenticate with GitHub so it knows it's him trying to connect to his remote repository.
 
@@ -143,7 +131,6 @@ What we will do now is the minimum required to set up the SSH keys and add the p
 
 A supplemental episode in this lesson discusses SSH and key pairs in more depth and detail.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 The first thing we are going to do is check if this has already been done on the computer you're on.  Because generally speaking, this setup only needs to happen once and then you can forget about it.
@@ -155,7 +142,6 @@ The first thing we are going to do is check if this has already been done on the
 You shouldn't really forget about your SSH keys, since they keep your account secure. It's good
 practice to audit your secure shell keys every so often. Especially if you are using multiple
 computers to access your account.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -173,10 +159,10 @@ Dracula has not set up SSH on his computer, so his output is
 ls: cannot access '/c/Users/Vlad Dracula/.ssh': No such file or directory
 ```
 
-If SSH has been set up on the computer you're using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up.  
+If SSH has been set up on the computer you're using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up.\
 Since they don't exist on Dracula's computer, he uses this command to create them.
 
-### 3\.1 Create an SSH key pair
+### 3.1 Create an SSH key pair
 
 To create an SSH key pair Vlad uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Vlad's email):
 
@@ -242,7 +228,7 @@ drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
 -rw-r--r-- 1 Vlad Dracula 197121 106 Jul 16 14:48 id_ed25519.pub
 ```
 
-### 3\.2 Copy the public key to GitHub
+### 3.2 Copy the public key to GitHub
 
 Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.
 
@@ -289,7 +275,7 @@ Hi Vlad! You've successfully authenticated, but GitHub does not provide shell ac
 
 Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.
 
-## 4\. Push local changes to a remote
+## 4. Push local changes to a remote
 
 Now that authentication is setup, we can return to the remote.  This command will push the changes from
 our local repository to the repository on GitHub:
@@ -315,7 +301,7 @@ To https://github.com/vlad/planets.git
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Proxy
+## プロキシ
 
 If the network you are connected to uses a proxy, there is a chance that your
 last command failed with "Could not resolve hostname" as the error message. To
@@ -350,15 +336,13 @@ type:
 $ unset SSH_ASKPASS
 ```
 
-in the terminal, before you run `git push`.  Despite the name, [Git uses
-`SSH_ASKPASS` for all credential
-entry](https://git-scm.com/docs/gitcredentials#_requesting_credentials), so
+in the terminal, before you run `git push`.  Despite the name, Git uses
+, so
 you may want to unset `SSH_ASKPASS` whether you are using Git via SSH or
 https.
 
 You may also want to add `unset SSH_ASKPASS` at the end of your `~/.bashrc`
 to make Git default to using the terminal for usernames and passwords.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -375,7 +359,6 @@ option is synonymous with the `--set-upstream-to` option for the `git branch`
 command, and is used to associate the current branch with a remote branch so
 that the `git pull` command can be used without any arguments. To do this,
 simply use `git push -u origin main` once the remote has been set up.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -407,7 +390,7 @@ How would you get that same information in the shell?
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 The left-most button (with the picture of a clipboard) copies the full identifier of the commit
 to the clipboard. In the shell, `git log` will show you the full commit identifier for each
@@ -425,8 +408,6 @@ We can do this with `git checkout ID` where ID is the identifier of the commit w
 look at. If we do this, we need to remember to put the repository back to the right state
 afterwards!
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -440,7 +421,6 @@ your repository without having to leave the browser. There are two options.
 First you can click the "Upload files" button in the toolbar at the top of the
 file tree. Or, you can drag and drop files from your desktop onto the file
 tree. You can read more about this [on this GitHub page](https://help.github.com/articles/adding-a-file-to-a-repository/).
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -456,13 +436,11 @@ record times, and why?
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 GitHub displays timestamps in a human readable relative format (i.e. "22 hours ago" or "three
 weeks ago"). However, if you hover over the timestamp, you can see the exact time at which the
 last change to the file occurred.
-
-
 
 :::::::::::::::::::::::::
 
@@ -477,13 +455,11 @@ How is "git push" different from "git commit"?
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 When we push changes, we're interacting with a remote repository to update it with the changes
 we've made locally (often this corresponds to sharing the changes we've made with others).
 Commit only updates your local repository.
-
-
 
 :::::::::::::::::::::::::
 
@@ -499,7 +475,7 @@ would have happened when you tried to link your local and remote repositories?
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 In this case, we'd see a merge conflict due to unrelated histories. When GitHub creates a
 README.md file, it performs a commit in the remote repository. When you try to pull the remote
@@ -551,5 +527,3 @@ create mode 100644 README.md
 - `git pull` copies changes from a remote repository to a local repository.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
